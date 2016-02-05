@@ -18,3 +18,19 @@
   height: 60px;
   margin: -10px;
 }
+
+#divProductos {
+  float: left;
+}
+.products {
+  width: 30%;
+  float: left;
+}
+
+.products > h3 {
+  font-size: 15px;
+}
+
+.imgProducto {
+  width: 80%;
+}
