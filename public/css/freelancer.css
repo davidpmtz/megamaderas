@@ -282,7 +282,8 @@ section.success a.active {
     position: relative;
     margin-bottom: 0;
     padding-bottom: .5em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000000;
+    background-color: #907a59;
 }
 
 .floating-label-form-group input,
@@ -318,7 +319,7 @@ section.success a.active {
 
 .floating-label-form-group::not(:first-child) {
     padding-left: 14px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid #00000;
 }
 
 .floating-label-form-group-with-value label {
@@ -331,7 +332,7 @@ section.success a.active {
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #000;
 }
 
 footer {

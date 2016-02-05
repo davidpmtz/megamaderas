@@ -1,11 +1,20 @@
 /*Barra de navegacion*/
+
 .navbar-default {
-    background-color: #26A65B;
-    border-color: transparent;
+  background-color: #26A65B;
+  border-color: transparent;
+}
+.btn-success {
+  color: #FFF;
+  background-color: #A88F63;
+  border-color: #18201E;
 }
 
+.text-danger, .text-danger:hover {
+    color: #c8de18;
+}
 #prueba {
-width: auto;
-height: 60px;
-margin: -10px;
+  width: auto;
+  height: 60px;
+  margin: -10px;
 }
