@@ -34,3 +34,52 @@
 .imgProducto {
   width: 80%;
 }
+
+footer {
+  float: left;
+  width: 100%;
+  margin-top: 5%;
+}
+
+footer .footer-above {
+  padding-top: 0px;
+}
+
+footer .footer-col {
+  padding-bottom: 0px;
+}
+
+.containerWidth {
+    width: 850px;
+}
+
+.col-sm-4 {
+  margin-top: 2%;
+}
+
+.img-width {
+  max-width: 80%;
+}
+
+.servicios-img-left {
+  max-width: 50%;
+  float: left;
+  padding-bottom: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.servicios-img-right {
+  float: right;
+  max-width: 49%;
+}
+
+.titulo-left,.descripcion-left {
+  float: right;
+  margin-right: 2%;
+}
+
+.titulo-right, .descripcion-right {
+  float: left;
+  margin-left: 1%;
+}
