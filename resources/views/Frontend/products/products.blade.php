@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container containerWidth">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
@@ -37,6 +37,15 @@
         </div>
     </div>
     @endforeach
+    <div class="">
+    <ul class="pagination">
+      @for ($i = 1; $i <= $productos->lastPage(); $i++)
+        <li><a href="{{$productos->url($i)}}">{{$i}}</a></li>
+      @endfor
+    </ul>
+    </div>
+    {{$productos->url(1)}}
+    {{$productos->lastPage()}}
     <div class="product">
     </div>
   </div>

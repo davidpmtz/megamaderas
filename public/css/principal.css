@@ -83,3 +83,28 @@ footer .footer-col {
   float: left;
   margin-left: 1%;
 }
+
+/**
+ * header
+ */
+
+  header {
+    background: #795548;
+  }
+/**
+ * Nosotros
+ */
+
+  .nosotros-right {
+    float: right;
+    text-align: justify;
+    max-width: 40%;
+    margin-right: 2%;
+  }
+
+  .nosotros-left {
+    float: left;
+    max-width: 40%;
+    text-align: justify;
+    margin-left: 1%;
+  }
