@@ -62,8 +62,8 @@
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            {!! Form::label('mail', '* Correo electrónico') !!}
-                            {!! Form::email('mail',null,['class' => 'form-control', 'placeholder' => 'Correo Electrónico', 'required', 'id' => 'email', 'required data-validation-required-message' => 'Porfavor ingresa una cuenta de correo valida.']) !!}
+                            {!! Form::label('email', '* Correo electrónico') !!}
+                            {!! Form::email('email',null,['class' => 'form-control', 'placeholder' => 'Correo Electrónico', 'required', 'id' => 'email', 'required data-validation-required-message' => 'Porfavor ingresa una cuenta de correo valida.']) !!}
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

@@ -1,30 +1,18 @@
 @extends('Backend.master')
-@section('tittle','Productos')  @endsection
-@section('activeProducts','active') @endsection
-@section('css')
-<link href="{{asset('Plugins/Fotos/src/css/least.min.css')}}" rel="stylesheet" />
-@endsection
+@section('tittle','Productos')
+
+@section('subtittle','Alta Producto | ')
+
+@section('subtittle2','Crear un nuevo producto para tu empresa.')
+
 @section('content')
 <div class="row">
-  <div class="col-xs-4">
-    <p class="home"> El catálogo de productos es una vista donde podemos realizar todas las acciones CRUD de la sección de productos.</p>
-    <div class="col-xs-12">
-      <li> Create </li>
-      <li> Read </li>
-      <li> Update </li>
-      <li> Delete </li>
-    </div>
-    <br>
-    <p> </p>
-    <p class="home">En esta vista tenemos el formulario para dar de alta un nuevo producto.</p>
-  </div>
-
-<div class="col-xs-7">
+  <div class="col-lg-12">
   <div class="panel panel-info">
     <h1> Alta de producto </h2><br><br>
       <div class='Form'>
       <div class="form-group">
-        {!! Form::open(['route' => 'admin.products.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => 'admin.products.store', 'method' => 'POST', 'files' => true]) !!}
   <div class="form-group">
   {!! Form::label('lastModify_by', 'Creado por') !!}
   {!! Form::text('lastModify_by','Waskalle',['class' => 'form-control', 'readonly' => 'readonly', 'required','hide']) !!}
@@ -54,6 +42,10 @@
     {!! Form::label('descripcion', '* Descripción del producto') !!}
     {!! Form::textarea('descripcion',null,['class' => 'form-control', 'resize' => 'none','placeholder' => 'Descripción detallada del producto', 'required']) !!}
   </div>
+  <div class="form-group">
+    {!! Form::label('image','Imagen') !!}
+    {!! Form::file('image') !!}
+  </div>
 
 
   <div class="form-group">
@@ -67,6 +59,3 @@
 </div>
 @endsection
 @section('js')
-
-
-@endsection

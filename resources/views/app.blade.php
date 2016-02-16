@@ -94,7 +94,7 @@
                     <div class="intro-text">
                         <span class="name">@yield('tittle')</span>
                         <hr class="star-light">
-                        <span class="skills">Esta es nuestra pagina principal donde podrás estar en contacto con nosotros y estar al dia de todos nuestros productos, ofertas y servicios.</span>
+                        <span class="skills">@yield('msg')</span>
                     </div>
                 </div>
             </div>

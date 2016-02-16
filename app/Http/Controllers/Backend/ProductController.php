@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Productos;
 use App\Tipos;
 use Laracasts\Flash\Flash;
+use Iluminate\Pagination\Paginator;
 
 class ProductController extends Controller {
 
@@ -20,7 +21,8 @@ class ProductController extends Controller {
 	public function index()
 	{
 		//
-		$productos = Productos::where('deleted_at' ,'=',null)->get();
+		$productos = Productos::where('deleted_at' ,'=',null)->paginate(10);
+		//$news = About::where('keyword','like','%Noticia%')->where('updated_at','like','%2016%')->where('view','=','Private')->orderBy('updated_at','DESC')->paginate(4);
 
 		return view('Backend.Products.index',['productos' => $productos]);
 	}
@@ -46,9 +48,18 @@ class ProductController extends Controller {
 	public function store(Request $request)
 	{
 		//
-
 			$newProduct = new Productos($request->all());
 			$newProduct->save();
+			$file = $request->file('image');
+			$idProduct = Productos::select('id')->orderBy('created_at','DESC')->first();
+			$idProduct = $idProduct->id;
+			$name = $idProduct.'.'.$file->getClientOriginalExtension();
+			$path = public_path() ."\images\productos";
+			$file->move($path, $name);
+
+
+
+
 			Flash::success("El producto " .$newProduct->nombre. " ha sido creado correctamente");
 			return redirect()->route('admin.products.index');
 	}
@@ -98,9 +109,14 @@ class ProductController extends Controller {
 		$productUpdate->cantidad = $request->cantidad;
 		$productUpdate->view = $request->view;
 
-
- 	  $productUpdate->save();
-
+//Sustituimos la imagen en case de haber sido cargada otra.
+if(!is_null($request->file('image'))) {
+		$file = $request->file('image');
+		$name = $id.'.'.$file->getClientOriginalExtension();
+		$path = public_path() ."\images\productos";
+		$file->move($path, $name);
+	}
+		$productUpdate->save();
  		Flash::success("El producto " .$productUpdate->nombre. " ha sido modificado correctamente");
  		return redirect()->route('admin.products.index');
 

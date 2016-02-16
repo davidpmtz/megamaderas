@@ -1,32 +1,33 @@
 @extends('Backend.master')
-@section('tittle','Productos')  @endsection
-@section('activeProducts','active') @endsection
+@section('tittle','Productos')
+
+@section('subtittle','Productos | ')
+
+@section('subtittle2','Ver - Modificar - Borrar - Crear ')
+
+@section('activeProducts','active')
+
 @section('css')
 <link href="{{asset('Plugins/Fotos/src/css/least.min.css')}}" rel="stylesheet" />
-@endsection
-@section('content')
-<div class="row">
-  <div class="col-xs-4">
-    <p class="home"> El catálogo de productos es una vista donde podemos realizar todas las acciones CRUD de la sección de productos.</p>
-    <div class="col-xs-12">
-      <li> Create </li>
-      <li> Read </li>
-      <li> Update </li>
-      <li> Delete </li>
-    </div>
-    <br>
-    <p> </p>
-    <p class="home">En esta primera vista se nos muestran todos los productos que tenemos registrados en la base de datos. En la última parte de la tabla tenemos botones de acciones donde podemos, modificar o eliminar dicho producto.</p>
-  </div>
 
-<div class="col-xs-7">
+@section('content')
+
+<div class="col-lg-12">
   <div class="panel panel-info">
-    <h1> Catálogo de productos </h2><br><br>
-      <div class="pull-right">
-        <a href="{{ url('admin/products/create') }}" class="btn btn-sm btn-info" ><i class="fa fa-plus"></i> Agregar producto </a>
-      </div>
+    <h1> Catálogo de productos </h2>
+  <br>
+<div class="clo-lg-12">
+
+</div>
       <div class="clearfix"> </div>
       <div class="table-responsive">
+        <table class="table">
+          <div class="text-right">
+            <th colspan="7">
+              <a href="{{ url('admin/products/create') }}" class="btn btn-sm btn-info" ><i class="fa fa-plus"></i> Agregar producto </a>
+            </th>
+          </div>
+        </table>
         <table class="table">
           <th>id</th>
           <th>Nombre</th>
@@ -63,8 +64,10 @@
   </div>
 </div>
 </div>
+<!-- Pagination -->
+  <div class="text-right">
+    {!! $productos->render() !!}
+  </div>
+<!-- END Pagination -->
 @endsection
 @section('js')
-
-
-@endsection

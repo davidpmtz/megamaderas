@@ -16,7 +16,7 @@ Route::get('/admin', function(){
 });
 
 
-Route::get('home', 'HomeController@index');
+//Route::get('home', 'HomeController@index');
 
 Route::group(array('prefix' => '/','namespace'=>'Frontend'), function()
 {
@@ -32,7 +32,9 @@ Route::group(array('prefix' => 'admin','namespace'=>'Backend'), function()
 	 Route::resource('products','ProductController');
 	 Route::resource('services','ServiceController');
 	 Route::resource('types','TypeController');
-	 Route::resource('messages','TypeController');
+	 Route::resource('messages','AdminController@message');
+	 Route::resource('messages3','AdminController@readMore');
+	 Route::resource('messages2','AdminController@messageAnswer');
 	 Route::get('products/{id}/destroy',[
 	 'uses' => 'ProductController@destroy',
 	 'as' => 'Backend.products.destroy'
