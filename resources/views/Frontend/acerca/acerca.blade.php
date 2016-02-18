@@ -3,7 +3,7 @@
 @section('tittle') <h1> Nosotros </h1> @endsection
 
 @section('content')
-  <div class="servicios">
+  <div class="col-sm-4 portfolio-item">
     <img class="servicios-img-left" src="FotosMM/Servicios/IMG_0203.jpg" alt="" />
     <h2 class="titulo-left">¿Quienes somos?</h2>
     <div class="nosotros-right">
@@ -12,7 +12,7 @@
       de mueblerías y carpintería.
     </div>
   </div>
-  <div class="servicios">
+  <div class="col-sm-4 portfolio-item">
 
     <img class="servicios-img-right" src="{{asset('Frontend/nosotros/vision.png')}}" alt="" />
     <h2 class="titulo-right">Nuestra visión</h2>
@@ -22,7 +22,7 @@ Así como la Cia elegida por nuestra innovación, soluciones, productos y servic
 Reconocidos por la calidad humana y profesionalismo de nuestra gente y contribución a nuestro país.
     </div>
   </div>
-  <div class="servicios">
+  <div class="col-sm-4 portfolio-item">
     <img class="servicios-img-left" src="{{asset('Frontend/nosotros/lider.png')}}" alt="" />
     <h2 class="titulo-left">Nuestra misión</h2>
     <div class="nosotros-right">
@@ -31,7 +31,7 @@ Reconocidos por la calidad humana y profesionalismo de nuestra gente y contribuc
       productos de alta calidad y excelencia en servicios.
     </div>
   </div>
-  <div class="servicios">
+  <div class="col-sm-4 portfolio-item">
     <img class="servicios-img-right" src="{{asset('Frontend/nosotros/valores.png')}}" alt="" />
     <h2 class="titulo-right">Nuestros valores</h2>
     <div class="nosotros-left">

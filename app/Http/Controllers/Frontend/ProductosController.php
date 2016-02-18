@@ -38,6 +38,9 @@ class ProductosController extends Controller {
 								->select('productos.*','T.tipo')
 								->join('tipos AS T','productos.tipo_id','=','T.id')
 								->paginate(6);
+		$tipos = Tipos::query()
+								->select('tipo','id')
+								->get();
 		if ($request->ajax()) {
 			return view('Frontend.products.product',['productos' => $productos]);
 			#return view('Frontend.products.product',['productos' => $productos])->header('Content-Type',$productos->nextPageUrl());
@@ -45,7 +48,22 @@ class ProductosController extends Controller {
 			'view'=>view('Frontend.products.product',['productos' => $productos]),
 		'url'=>$productos->nextPageUrl()]);*/
 		}
-		return view('Frontend.products.products',['productos' => $productos]);
+		return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
+	}
+
+	public function productosPorTipo(Request $request, $tipo)	{
+		$productos = Productos::query()
+								->select('productos.*','T.tipo')
+								->join('tipos AS T','productos.tipo_id','=','T.id')
+								->where('productos.tipo_id',$tipo)
+								->paginate(6);
+		$tipos = Tipos::query()
+								->select('tipo','id')
+								#->where('id',$tipo)
+								->get();
+		#dd($productos);
+		return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
+		#dd($productos);
 	}
 
 	/**

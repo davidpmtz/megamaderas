@@ -77,6 +77,15 @@
                     <li class="page-scroll">
                         <a href="{{url('acerca')}}">Acerca de</a>
                     </li>
+                    <li class="page-scroll">
+                      <div class="form-group">
+                        <input id="inBuscarProducto" type="text" data-toggle="tooltip" data-placement="bottom" title="Presiona Enter para más resultados" class="form-control" placeholder="Buscar">
+                      </div>
+                      <!--
+                      <button type="submit" class="btn btn-default">Enviar</button>
+                      <form class="navbar-form navbar-left" role="search">
+                      </form>-->
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
