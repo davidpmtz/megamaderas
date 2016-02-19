@@ -82,9 +82,11 @@
                         <input id="inBuscarProducto" type="text" data-toggle="tooltip" data-placement="bottom" title="Presiona Enter para más resultados" class="form-control" placeholder="Buscar">
                       </div>
                       <!--
-                      <button type="submit" class="btn btn-default">Enviar</button>
                       <form class="navbar-form navbar-left" role="search">
                       </form>-->
+                    </li>
+                    <li class="page-scroll">
+                      <button type="submit" class="btn btn-default">Buscar</button>
                     </li>
                 </ul>
             </div>

@@ -93,6 +93,14 @@ footer .footer-col {
   max-width: 80%;
 }
 
+.navbar {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.nav>li>a {
+  padding: 10px 10px;
+}
 .servicios {
   float: left;
 }
