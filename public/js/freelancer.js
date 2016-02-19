@@ -35,3 +35,73 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$(document).ready(function() {
+  $('#inBuscarProducto').on('keyup', findProduct);
+  $('#inBuscarProducto').on('keydown', showProduct);
+  $('#btnBuscarProducto').on('click', function(event) {
+    event.preventDefault();
+    if ($('#btnBuscarProducto').hasClass('btn-on-producto')) {
+      buscarProdutoA($('#inBuscarProducto').val());
+    } else {
+      $('#inBuscarProducto').focus();
+    }
+  });
+});
+
+function findProduct() {
+  var productos = $(".portfolio-producto");
+  var busqueda = $(this).val();
+  busqueda = busqueda.toLowerCase();
+  $.each(productos,function(i, el) {
+    var contenido = productos.eq(i).text().toLowerCase();
+    var ix = contenido.indexOf(busqueda);
+    if (ix == -1 && productos.eq(i).is(":visible")) {
+      productos.eq(i).hide();
+    }
+  });
+  if (busqueda.trim()!='') {
+    $('#btnBuscarProducto').addClass('btn-on-producto');
+  } else {
+    $('#btnBuscarProducto').removeClass('btn-on-producto');
+  }
+}
+
+function showProduct() {
+  var productos = $(".portfolio-producto");
+  var busqueda = $(this).val().toLowerCase();
+  $.each(productos,function(i, el) {
+    var contenido = productos.eq(i).text().toLowerCase();
+    var indexof = contenido.indexOf(busqueda);
+    if (indexof == -1 && productos.eq(i).is(":hidden")) {
+      productos.eq(i).show();
+    }
+  });
+  if (busqueda.trim()!='') {
+    $('#btnBuscarProducto').addClass('btn-on-producto');
+  } else {
+    $('#btnBuscarProducto').removeClass('btn-on-producto');
+  }
+}
+
+function buscarProdutoA(busqueda) {
+  $.ajax({
+    url: $('#ihbtnBuscarProducto').val(),
+    data: {busqueda: busqueda}
+  })
+  .done(function(data) {
+    if ($('#divProductos').length>0) {
+      $('#divProductos').empty();
+      $('#divProductos').html(data);
+    } else {
+      window.location = $('#ihRedirProductos').val();
+      $('#divProductos').empty();
+      $('#divProductos').html(data);
+    }
+  })
+  .fail(function() {
+  })
+  .always(function() {
+  });
+
+}

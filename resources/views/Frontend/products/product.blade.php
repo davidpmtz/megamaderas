@@ -1,12 +1,56 @@
 @foreach ($productos as $producto)
-  <div class="products">
-    <h3>{{$producto->nombre}}</h3>
-    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{$producto->descripcion}}"
-    href="FotosMM/Herrajes/3360 70-77.jpg">
-    <span class="overlay-img"></span>
-    <span class="overlay-img-thumb font-icon-plus"></span>
-    <img src="FotosMM/Herrajes/3360 70-77.jpg" alt="">
+<div class="col-sm-4 portfolio-item portfolio-producto" id="divproducto{{$producto->id}}">
+  <a href="#producto{{$producto->id}}" class="portfolio-link" data-toggle="modal">
+      <img src="{{asset('FotosMM/Herrajes/3360 70-77.jpg')}}" class="img-responsive" alt="{{$producto->nombre}}">
   </a>
+  <div class="not-show" aria-hidden="true">
+    {{$producto->nombre}}
+    {{$producto->descripcion}}
+    {{$producto->tipo}}
+    {{$producto->precio}}
   </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="producto{{$producto->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>{{$producto->nombre}}</h2>
+                        <hr class="star-primary">
+                        <img src="{{asset('FotosMM/Herrajes/3360 70-77.jpg')}}" class="img-responsive img-centered" alt="{{$producto->nombre}}">
+                        <ul class="list-inline item-details">
+                            <li><strong><p>Descripción</p></strong>
+                              <p>{{$producto->descripcion}}</p>
+                            </li>
+                        </ul>
+                        <ul class="list-inline item-details">
+                          <li><strong><p>Tipo</p></strong>
+                            <p>{{$producto->tipo}}</p>
+                          </li>
+                          <li><strong><p>Precio</p></strong>
+                            <p>${{$producto->precio}}</p>
+                          </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endforeach
-<!---->{{$productos->nextPageUrl()}}
+<div class="divContentPagination">
+  <ul class="pagination">
+    @for ($i = 1; $i <= $productos->lastPage(); $i++)
+      <li><a href="{{$productos->url($i)}}">{{$i}}</a></li>
+    @endfor
+  </ul>
+</div>
