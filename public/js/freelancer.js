@@ -39,6 +39,14 @@ $('.navbar-collapse ul li a').click(function() {
 $(document).ready(function() {
   $('#inBuscarProducto').on('keyup', findProduct);
   $('#inBuscarProducto').on('keydown', showProduct);
+  $('#btnBuscarProducto').on('click', function(event) {
+    event.preventDefault();
+    if ($('#btnBuscarProducto').hasClass('btn-on-producto')) {
+      buscarProdutoA($('#inBuscarProducto').val());
+    } else {
+      $('#inBuscarProducto').focus();
+    }
+  });
 });
 
 function findProduct() {
@@ -52,6 +60,11 @@ function findProduct() {
       productos.eq(i).hide();
     }
   });
+  if (busqueda.trim()!='') {
+    $('#btnBuscarProducto').addClass('btn-on-producto');
+  } else {
+    $('#btnBuscarProducto').removeClass('btn-on-producto');
+  }
 }
 
 function showProduct() {
@@ -64,4 +77,31 @@ function showProduct() {
       productos.eq(i).show();
     }
   });
+  if (busqueda.trim()!='') {
+    $('#btnBuscarProducto').addClass('btn-on-producto');
+  } else {
+    $('#btnBuscarProducto').removeClass('btn-on-producto');
+  }
+}
+
+function buscarProdutoA(busqueda) {
+  $.ajax({
+    url: $('#ihbtnBuscarProducto').val(),
+    data: {busqueda: busqueda}
+  })
+  .done(function(data) {
+    if ($('#divProductos').length>0) {
+      $('#divProductos').empty();
+      $('#divProductos').html(data);
+    } else {
+      window.location = $('#ihRedirProductos').val();
+      $('#divProductos').empty();
+      $('#divProductos').html(data);
+    }
+  })
+  .fail(function() {
+  })
+  .always(function() {
+  });
+
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Productos;
 use App\Tipos;
 use Laracasts\Flash\Flash;
+use Response;
 
 class ProductosController extends Controller {
 
@@ -64,6 +65,20 @@ class ProductosController extends Controller {
 		#dd($productos);
 		return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
 		#dd($productos);
+	}
+
+	public function showProduct(Request $request)	{
+		$busqueda = $request->input('busqueda');
+		$productos = Productos::query()
+								->select('productos.*','T.tipo')
+								->join('tipos AS T','productos.tipo_id','=','T.id')
+								->where(\DB::raw("CONCAT(productos.nombre,' ',productos.descripcion,' ',productos.precio,' ',T.tipo)"),"LIKE","%$busqueda%")
+								->paginate();
+		$tipos = Tipos::query()
+		->select('tipo','id')
+		->get();
+		return view('Frontend.products.product',['productos' => $productos],['tipos' => $tipos]);
+		//return Response::json(['productos' => $productos,'busqueda' => $request->input('busqueda')]);
 	}
 
 	/**

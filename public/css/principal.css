@@ -28,6 +28,14 @@
   float: left;
 }
 
+.btn-on-producto {
+  background-color: #2CD917;
+  border-color: #2CD917;
+}
+#btnBuscarProducto:hover {
+  background-color: #2CD917;
+  border-color: #2CD917;
+}
 .products > h3 {
   font-size: 15px;
 }
