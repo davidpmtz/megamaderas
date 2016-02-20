@@ -77,6 +77,16 @@
                     <li class="page-scroll">
                         <a href="{{url('acerca')}}">Acerca de</a>
                     </li>
+                    <li class="page-scroll">
+                      <div class="form-group">
+                        <input id="inBuscarProducto" type="text" data-toggle="tooltip" data-placement="bottom" title="Presiona Enter para más resultados" class="form-control" placeholder="Buscar">
+                      </div>
+                    </li>
+                    <li class="page-scroll">
+                      <input id="ihRedirProductos"type="hidden" name="name" value="{{url('Productos')}}">
+                      <input id="ihbtnBuscarProducto" type="hidden" name="name" value="{{url('showProduct')}}">
+                      <button id="btnBuscarProducto" type="submit" class="btn btn-default">Buscar</button>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -90,7 +100,7 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <img class="img-responsive" src="img/@yield('img')" alt="">
+                    <!--<img class="img-responsive" src="img/@yield('img')" alt="">-->
                     <div class="intro-text">
                         <span class="name">@yield('tittle')</span>
                         <hr class="star-light">
