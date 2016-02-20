@@ -49,7 +49,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Megamaderas | cPanel</a>
             </div>
-            <!-- Top Menu Items -->
+            <!-- Top Menu Items -
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
@@ -165,7 +165,7 @@
                     <li>
                         <a href="{{url('admin/messages')}}"><i class="fa fa-fw fa-edit"></i> Mensajes</a>
                     </li>
-                    <li>
+                  <!--  <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Ventas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -175,7 +175,7 @@
                                 <a href="#">Reporte Diario</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -210,7 +210,7 @@
                 </div>
                 <!-- /.row -->
               @yield('content')
-                
+
                 <!-- /.row -->
 
 

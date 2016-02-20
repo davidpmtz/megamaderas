@@ -32,9 +32,6 @@ Route::group(array('prefix' => 'admin','namespace'=>'Backend'), function()
 	 Route::resource('products','ProductController');
 	 Route::resource('services','ServiceController');
 	 Route::resource('types','TypeController');
-	 Route::resource('messages','AdminController@message');
-	 Route::resource('messages3','AdminController@readMore');
-	 Route::resource('messages2','AdminController@messageAnswer');
 	 Route::get('products/{id}/destroy',[
 	 'uses' => 'ProductController@destroy',
 	 'as' => 'Backend.products.destroy'
@@ -47,6 +44,12 @@ Route::group(array('prefix' => 'admin','namespace'=>'Backend'), function()
  	 'uses' => 'ServiceController@destroy',
  	 'as' => 'Backend.services.destroy'
  		]);
+
+		//RUTAS PARA MENSAJES
+		Route::resource('messages','AdminController@message');
+		Route::resource('messages3','AdminController@readMore');
+		Route::resource('messages2','AdminController@messageAnswer');
+		Route::resource('messages4','AdminController@sendAnswer');
 
 
 });
