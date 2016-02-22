@@ -161,3 +161,19 @@ footer .footer-col {
     text-align: justify;
     margin-left: 1%;
   }
+
+ .acerca-item {
+   min-width: 45%;
+ }
+
+ .titulo-center {
+   text-align: center;
+ }
+
+
+.acerca-img-center {
+  max-width: 50%;
+  padding-bottom: 2%;
+  margin-left: 20%;
+  margin-top: 2%;
+}

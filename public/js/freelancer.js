@@ -37,12 +37,27 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 $(document).ready(function() {
-  $('#inBuscarProducto').on('keyup', findProduct);
+  $('#inBuscarProducto').on('keyup', function(event) {
+    if (event.which==13 && $('#btnBuscarProducto').hasClass('btn-on-producto')) {
+      if ($('#divProductos').length>0) {
+        buscarProdutoA($('#inBuscarProducto').val());
+      } else {
+        parent.location=$('#ihRedirProductos').val()+'?busqueda='+$('#inBuscarProducto').val();
+      }
+    } else {
+      findProduct();
+    }
+  });
   $('#inBuscarProducto').on('keydown', showProduct);
   $('#btnBuscarProducto').on('click', function(event) {
     event.preventDefault();
     if ($('#btnBuscarProducto').hasClass('btn-on-producto')) {
-      buscarProdutoA($('#inBuscarProducto').val());
+      if ($('#divProductos').length>0) {
+        buscarProdutoA($('#inBuscarProducto').val());
+      } else {
+        parent.location=$('#ihRedirProductos').val()+'?busqueda='+$('#inBuscarProducto').val();
+      }
+
     } else {
       $('#inBuscarProducto').focus();
     }
@@ -51,7 +66,7 @@ $(document).ready(function() {
 
 function findProduct() {
   var productos = $(".portfolio-producto");
-  var busqueda = $(this).val();
+  var busqueda = $("#inBuscarProducto").val();
   busqueda = busqueda.toLowerCase();
   $.each(productos,function(i, el) {
     var contenido = productos.eq(i).text().toLowerCase();
@@ -69,7 +84,7 @@ function findProduct() {
 
 function showProduct() {
   var productos = $(".portfolio-producto");
-  var busqueda = $(this).val().toLowerCase();
+  var busqueda = $("#inBuscarProducto").val();
   $.each(productos,function(i, el) {
     var contenido = productos.eq(i).text().toLowerCase();
     var indexof = contenido.indexOf(busqueda);
