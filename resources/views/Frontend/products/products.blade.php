@@ -32,6 +32,7 @@
 </nav>
 
   <div id="divProductos">
+    @if($productos->count() > 0)
     @foreach ($productos as $producto)
     <div class="col-sm-4 portfolio-item portfolio-producto" id="divproducto{{$producto->id}}">
       <a href="#producto{{$producto->id}}" class="portfolio-link" data-toggle="modal">
@@ -88,5 +89,11 @@
       @endfor
     </ul>
     </div>
+    @else
+      <div class="alert alert-info alert-dismissable" style="margin-left:8%;margin-top:10%;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        No hay productos registrados aún.
+      </div>
+    @endif
   </div>
 @endsection

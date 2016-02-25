@@ -13,7 +13,7 @@ class Contacto extends Model
  *
  * @var string
  */
-protected $table = 'Contactos';
+protected $table = 'contactos';
 
 /**
  * The attributes that are mass assignable.
