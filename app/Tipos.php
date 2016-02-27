@@ -18,7 +18,7 @@ protected $talbe = 'tipos';
  * Los atributos que se pueden asignar
  * @var array
  */
-protected $fillable = ['tipo'];
+protected $fillable = ['tipo','lastModify_by'];
 
 
 }

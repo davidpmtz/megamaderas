@@ -20,7 +20,7 @@ class TypeController extends Controller {
 	{
 		//
 		$tipos = Tipos::where('tipo','!=','[ Seleccionar ]')->get();
-		return view ('backend.Types.index',['tipos' => $tipos]);
+		return view ('Backend.Types.index',['tipos' => $tipos]);
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TypeController extends Controller {
 	public function show($id)
 	{
 		//
-		dd("Waskalle");
+
 	}
 
 	/**
