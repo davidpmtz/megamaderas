@@ -49,7 +49,7 @@ class ProductosController extends Controller {
 			$productos = Productos::query()
 			->select('productos.*','T.tipo')
 			->join('tipos AS T','productos.tipo_id','=','T.id')
-			->paginate(6);
+			->paginate(9);
 			return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
 		}
 	}
@@ -59,7 +59,7 @@ class ProductosController extends Controller {
 								->select('productos.*','T.tipo')
 								->join('tipos AS T','productos.tipo_id','=','T.id')
 								->where('productos.tipo_id',$tipo)
-								->paginate(6);
+								->paginate(9);
 		$tipos = Tipos::query()
 								->select('tipo','id')
 								#->where('id',$tipo)

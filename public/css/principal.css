@@ -177,3 +177,29 @@ footer .footer-col {
   margin-left: 20%;
   margin-top: 2%;
 }
+
+#divServicios {
+  float: left;
+  width: 100%;
+}
+.servicio-item {
+  min-width: 80%;
+}
+
+.servicio-img > img {
+  width: 45%;
+  float: left;
+}
+
+.title-service {
+  text-align: center;
+}
+
+.desc-service {
+    float: left;
+    margin-left: 1%;
+}
+
+.title-service > h1 {
+  font-size: xx-large;
+}
