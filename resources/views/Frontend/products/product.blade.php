@@ -1,7 +1,8 @@
+@if($productos->count() > 0)
 @foreach ($productos as $producto)
 <div class="col-sm-4 portfolio-item portfolio-producto" id="divproducto{{$producto->id}}">
   <a href="#producto{{$producto->id}}" class="portfolio-link" data-toggle="modal">
-      <img src="{{asset('FotosMM/Herrajes/3360 70-77.jpg')}}" class="img-responsive" alt="{{$producto->nombre}}">
+      <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive" alt="{{$producto->nombre}}">
   </a>
   <div class="not-show" aria-hidden="true">
     {{$producto->nombre}}
@@ -25,7 +26,7 @@
                     <div class="modal-body">
                         <h2>{{$producto->nombre}}</h2>
                         <hr class="star-primary">
-                        <img src="{{asset('FotosMM/Herrajes/3360 70-77.jpg')}}" class="img-responsive img-centered" alt="{{$producto->nombre}}">
+                        <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive img-centered" alt="{{$producto->nombre}}">
                         <ul class="list-inline item-details">
                             <li><strong><p>Descripción</p></strong>
                               <p>{{$producto->descripcion}}</p>
@@ -54,3 +55,9 @@
     @endfor
   </ul>
 </div>
+@else
+  <div class="alert alert-info alert-dismissable" style="margin-left:8%;margin-top:10%;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    No se encontraron resultados para su busqueda.
+  </div>
+@endif

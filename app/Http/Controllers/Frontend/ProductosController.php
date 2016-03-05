@@ -33,23 +33,25 @@ class ProductosController extends Controller {
 		 return view('products.index');
 	 }
 
-	public function productos(Request $request)
-	{
-		$productos = Productos::query()
-								->select('productos.*','T.tipo')
-								->join('tipos AS T','productos.tipo_id','=','T.id')
-								->paginate(6);
+	public function productos(Request $request)	{
 		$tipos = Tipos::query()
-								->select('tipo','id')
-								->get();
-		if ($request->ajax()) {
-			return view('Frontend.products.product',['productos' => $productos]);
-			#return view('Frontend.products.product',['productos' => $productos])->header('Content-Type',$productos->nextPageUrl());
-			/*return response()->json([
-			'view'=>view('Frontend.products.product',['productos' => $productos]),
-		'url'=>$productos->nextPageUrl()]);*/
+		->select('tipo','id')
+		->get();
+		if ($request->has('busqueda')) {
+			$busqueda = $request->input('busqueda');
+			$productos = Productos::query()
+									->select('productos.*','T.tipo')
+									->join('tipos AS T','productos.tipo_id','=','T.id')
+									->where(\DB::raw("CONCAT(productos.nombre,' ',productos.descripcion,' ',productos.precio,' ',T.tipo)"),"LIKE","%$busqueda%")
+									->paginate(4);
+			return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
+		} else {
+			$productos = Productos::query()
+			->select('productos.*','T.tipo')
+			->join('tipos AS T','productos.tipo_id','=','T.id')
+			->paginate(6);
+			return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
 		}
-		return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
 	}
 
 	public function productosPorTipo(Request $request, $tipo)	{
