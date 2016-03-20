@@ -36,13 +36,11 @@
     @foreach ($productos as $producto)
     <div class="col-sm-4 portfolio-item portfolio-producto" id="divproducto{{$producto->id}}">
       <a href="#producto{{$producto->id}}" class="portfolio-link" data-toggle="modal">
-          <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive" alt="{{$producto->nombre}}">
+          <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive" alt="{{$producto->nombre}}" title="{{$producto->nombre}}">
       </a>
       <div class="not-show" aria-hidden="true">
         {{$producto->nombre}}
-        {{$producto->descripcion}}
         {{$producto->tipo}}
-        {{$producto->precio}}
       </div>
     </div>
 
@@ -60,18 +58,10 @@
                         <div class="modal-body">
                             <h2>{{$producto->nombre}}</h2>
                             <hr class="star-primary">
-                            <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive img-centered" alt="{{$producto->nombre}}">
-                            <ul class="list-inline item-details">
-                                <li><strong><p>Descripción</p></strong>
-                                  <p>{{$producto->descripcion}}</p>
-                                </li>
-                            </ul>
+                            <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive img-centered" alt="{{$producto->nombre}}" title="{{$producto->nombre}}">
                             <ul class="list-inline item-details">
                               <li><strong><p>Tipo</p></strong>
                                 <p>{{$producto->tipo}}</p>
-                              </li>
-                              <li><strong><p>Precio</p></strong>
-                                <p>${{$producto->precio}}</p>
                               </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cerrar</button>
