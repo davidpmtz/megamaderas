@@ -1,0 +1,30 @@
+<html>
+ <div id="gmap" style="height: 263px; width: 296px;" align="right"></div>
+
+ <script>
+     var contenido = '<h4>Chapultepec</h4>';
+     var myLatLng = new google.maps.LatLng(20.6549037, -103.3578793);
+     window.onload = function(){
+         var options = {
+             zoom: 17
+             , center: myLatLng
+             , mapTypeId: google.maps.MapTypeId.ROADMAP
+         };
+
+         var map = new google.maps.Map(document.getElementById('gmap'), options);
+
+         var marcador = new google.maps.Marker({
+             position: myLatLng
+             , map: map
+             , cursor: 'default'
+             , animation: google.maps.Animation.DROP
+         });
+
+         var infowindow = new google.maps.InfoWindow({
+           content: contenido,
+           });
+         infowindow.open(map, marcador);
+     };
+ </script>
+
+</html>
