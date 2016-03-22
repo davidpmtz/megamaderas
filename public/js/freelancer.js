@@ -114,15 +114,49 @@ $(document).ready(function() {
       $('#inBuscarProducto').focus();
     }
   });
-  $('#liProductos').hover(function() {
-      /* Stuff to do when the mouse enters the element */
-      //$('#liProductos > .hidden').show('400');
+    $('#liProductos').hover(function() {
       $('#liProductos > ul').show('400');
-  }, function() {
-      /* Stuff to do when the mouse leaves the element */
+    }, function() {
       $('#liProductos > ul').hide('400');
-  });
+    });
+
+    $('#liServicios').hover(function() {
+      $('#liServicios > ul').show('400');
+    }, function() {
+      $('#liServicios > ul').hide('400');
+    });
+
+    addMenuOptions();
 });
+
+function addMenuOptions() {
+    console.log($('#ihbtnBuscarProducto').val());
+    console.log(window.location.href);
+    $.ajax({
+        url: $("#listOptions").val(),
+        data: {}
+    })
+    .done(function(data) {
+        productos = data.tipos;
+        servicios = data.servicios;
+        $.each(productos,function(index, el) {
+            $li = $('<li/>');
+            $a = $('<a/>',{href:$("#ihRedirProductos").val()+'/'+el.id,text:el.tipo});
+            $li.append($a);
+            $('#ulProductos').append($li);
+        });
+
+        $.each(servicios,function(index, el) {
+            $li = $('<li/>');
+            $a = $('<a/>',{href:$("#ihService").val()+'/'+el.id,text:el.nombre});
+            $li.append($a);
+            $('#ulServicios').append($li);
+        });
+        console.log(data);
+    })
+    .fail(function() {})
+    .always(function() {});
+}
 
 function findProduct() {
   var productos = $("#divProductos > .portfolio-producto");

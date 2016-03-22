@@ -26,6 +26,8 @@ Route::group(array('prefix' => '/','namespace'=>'Frontend'), function()
 	Route::resource('showProduct','ProductosController@showProduct');
 	Route::resource('Servicios','ServiciosController@index');
 	Route::resource('acerca','AcercaController@index');
+	Route::resource('listOptions','ProductosController@listOptions');
+	Route::resource('showService/{id}','ServiciosController@show');
 
 });
 

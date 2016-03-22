@@ -65,9 +65,13 @@
                     </li>
                     <li id="liProductos" class="page-scroll">
                         <a href="{{url('Productos')}}">Productos</a>
+                        <ul id="ulProductos" class="listOptions">
+                        </ul>
                     </li>
-                    <li class="page-scroll">
+                    <li id="liServicios" class="page-scroll">
                         <a href="{{url('Servicios')}}">Servicios</a>
+                        <ul id="ulServicios" class="listOptions">
+                        </ul>
                     </li>
                     <li class="page-scroll">
                         <a href="{{url('contacto')}}">Contacto</a>
@@ -82,8 +86,10 @@
                       </div>
                     </li>
                     <li class="page-scroll">
-                      <input id="ihRedirProductos"type="hidden" name="name" value="{{url('Productos')}}">
+                      <input id="ihRedirProductos" type="hidden" name="name" value="{{url('Productos')}}">
+                      <input id="ihService" type="hidden" name="name" value="{{url('showService')}}">
                       <input id="ihbtnBuscarProducto" type="hidden" name="name" value="{{url('showProduct')}}">
+                      <input id='listOptions' type="hidden" name="name" value="{{url('listOptions')}}">
                       <button id="btnBuscarProducto" type="submit" class="btn btn-default">Buscar</button>
                     </li>
                 </ul>

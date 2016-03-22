@@ -59,9 +59,9 @@ class ServiciosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		//
+	public function show($id) {
+		$servicios = Service::where('id',$id)->paginate(1);
+		return view('Frontend.services.services',['servicios'=>$servicios]);
 	}
 
 	/**
