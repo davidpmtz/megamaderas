@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('tittle') <h1> Servicios </h1> @endsection
+@section('tittle') <h1 class="tittle"> Servicios </h1> @endsection
 
 @section('content')
   <div id="divServicios">

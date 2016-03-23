@@ -35,6 +35,9 @@ h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
+.tittle {
+  font-family: 'Kaushan Script', cursive;
+}
 
 hr.star-light,
 hr.star-primary {
