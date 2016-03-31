@@ -1,30 +1,42 @@
 @extends('app')
 
-@section('tittle') <h1 class="tittle"> Bienvenido </h1> @endsection
-
-@section('content')
+@section('tittle')
 <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <div id="carrusel" class="container">
-        <div class="row">
-            <div class="content-img-carrousel">
-                <ul>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/Servicio.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0217.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0200.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0203.jpg')}}"/>
-                    </li>
-                </ul>
-            </div>
+    <div id="carrusel">
+        <div class="content-img-carrousel">
+            <ul>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/Servicio.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 1
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0217.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 2
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0200.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 3
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0203.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 4
+                    </div>
+                </li>
+            </ul>
         </div>
+
     </div>
 
+@endsection
+
+@section('content')
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
