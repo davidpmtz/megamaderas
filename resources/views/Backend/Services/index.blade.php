@@ -1,31 +1,21 @@
 @extends('Backend.master')
-@section('tittle','Servicios')  @endsection
-@section('activeServices','active') @endsection
-@section('css')
-@endsection
+@section('tittle','Servicios')
+
+@section('subtittle','Servicios | ')
+
+@section('subtittle2','Ver - Modificar - Borrar - Crear ')
+
+
 @section('content')
 <div class="row">
-  <div class="col-xs-4">
-    <p class="home"> El catálogo de servicios es una vista donde podemos realizar todas las acciones CRUD de la sección de servicios.</p>
-    <div class="col-xs-12">
-      <li> Create </li>
-      <li> Read </li>
-      <li> Update </li>
-      <li> Delete </li>
-    </div>
-    <br>
-    <p> </p>
-    <p class="home">En esta primera vista se nos muestran todos los servicios que tenemos registrados en la base de datos. En la última parte de la tabla tenemos botones de acciones donde podemos, modificar o eliminar dicho servicio.</p>
-  </div>
-
-<div class="col-xs-7">
-  <div class="panel panel-info">
-    <h1> Catálogo de servicios </h2><br><br>
-      <div class="pull-right">
-        <a href="{{ url('admin/services/create') }}" class="btn btn-sm btn-info" ><i class="fa fa-plus"></i> Agregar servicio </a>
-      </div>
-      <div class="clearfix"> </div>
-      <div class="table-responsive">
+  <div class="col-lg-12">
+    <div class="panel panel-info">
+      <h1> Catálogo de servicios </h2><br><br>
+        <div class="pull-right">
+          <a href="{{ url('admin/services/create') }}" class="btn btn-sm btn-info" ><i class="fa fa-plus"></i> Agregar servicio </a>
+        </div>
+        <div class="clearfix"> </div>
+        <div class="table-responsive">
         <table class="table">
           <th>id</th>
           <th>Nombre</th>
@@ -60,8 +50,9 @@
   </div>
 </div>
 </div>
-@endsection
-@section('js')
-
-
+<!-- Pagination -->
+  <div class="text-right">
+    {!! $servicios->render() !!}
+  </div>
+<!-- END Pagination -->
 @endsection

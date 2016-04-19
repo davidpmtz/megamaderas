@@ -35,6 +35,10 @@ h6 {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
+.tittle {
+  font-family: woodyDudy;
+  color: #2c3e50;
+}
 
 hr.star-light,
 hr.star-primary {
@@ -48,7 +52,7 @@ hr.star-primary {
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
+    content: "\f06c";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -63,7 +67,7 @@ hr.star-light {
 
 hr.star-light:after {
     color: #fff;
-    background-color: #D8D378;
+    background-color: #18bc9c;
 }
 
 hr.star-primary {
@@ -82,7 +86,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #D8D378;
+    background: #18bc9c;
 }
 
 header .container {
@@ -220,7 +224,7 @@ section.success a.active {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(225, 194, 24, 0.9);
+    background: rgba(24,188,156,.9);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -456,4 +460,17 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+}
+/** Draven stylish**/
+
+/*For section tittles*/
+@font-face {
+    font-family: woodyDudy;
+    src: url(../fonts/wood.ttf);
+}
+
+/*For common text areas (body text)*/
+@font-face {
+    font-family: damnFont;
+    src: url(../fonts/opensans.ttf);
 }

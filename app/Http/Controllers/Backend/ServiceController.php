@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Service;
 use Laracasts\Flash\Flash;
+use Iluminate\Pagination\Paginator;
 
 class ServiceController extends Controller {
 
@@ -19,7 +20,7 @@ class ServiceController extends Controller {
 	public function index()
 	{
 		//
-		$servicios = Service::all();
+		$servicios = Service::paginate(10);
 		return view ('Backend.Services.index',['servicios' => $servicios]);
 	}
 
@@ -43,7 +44,14 @@ class ServiceController extends Controller {
 	{
 		//
 		$newService = new Service($request->all());
+
+		$file = $request->file('image');
 		$newService->save();
+		$idService = Service::select('id')->orderBy('created_at','DESC')->first();
+		$idService = $idService->id;
+		$name = $idService.'.'.$file->getClientOriginalExtension();
+		$path = public_path() ."\images\servicios";
+		$file->move($path, $name);
 		Flash::success("El servicio " .$newService->nombre. " ha sido creado correctamente");
 		return redirect()->route('admin.services.index');
 
@@ -89,6 +97,13 @@ class ServiceController extends Controller {
 		$serviceUpdate->lastModify_by = $request->lastModify_by;
 		$serviceUpdate->view = $request->view;
 
+		//Sustituimos la imagen en case de haber sido cargada otra.
+		if(!is_null($request->file('image'))) {
+				$file = $request->file('image');
+				$name = $id.'.'.$file->getClientOriginalExtension();
+				$path = public_path() ."\images\servicios";
+				$file->move($path, $name);
+			}
 
 		$serviceUpdate->save();
 

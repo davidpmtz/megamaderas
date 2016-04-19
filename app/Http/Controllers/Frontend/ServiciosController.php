@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
+use App\Service;
 
 class ServiciosController extends Controller {
 
@@ -27,7 +28,9 @@ class ServiciosController extends Controller {
 	 */
 	public function index()
 	{
-		return view('Frontend.services.services');
+		$servicios = Service::paginate(9);
+		#dd($servicios);
+		return view('Frontend.services.services',['servicios'=>$servicios]);
 	}
 
 	/**
@@ -56,9 +59,9 @@ class ServiciosController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		//
+	public function show($id) {
+		$servicios = Service::where('id',$id)->paginate(1);
+		return view('Frontend.services.services',['servicios'=>$servicios]);
 	}
 
 	/**

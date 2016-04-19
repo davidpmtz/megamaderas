@@ -1,29 +1,19 @@
 @extends('Backend.master')
-@section('tittle','Servicios')  @endsection
-@section('activeServices','active') @endsection
-@section('css')
-@endsection
+@section('tittle','Servicios')
+
+@section('subtittle','Alta de Servicio | ')
+
+@section('subtittle2','Llena los datos solicitados para crear un nuevo servicio.')
+
+
 @section('content')
 <div class="row">
-  <div class="col-xs-4">
-    <p class="home"> El catálogo de servicios es una vista donde podemos realizar todas las acciones CRUD de la sección de servicios.</p>
-    <div class="col-xs-12">
-      <li> Create </li>
-      <li> Read </li>
-      <li> Update </li>
-      <li> Delete </li>
-    </div>
-    <br>
-    <p> </p>
-    <p class="home">En esta vista tenemos el formulario para dar de alta un nuevo servicio.</p>
-  </div>
-
-<div class="col-xs-7">
-  <div class="panel panel-info">
-    <h1> Alta de servicio </h2><br><br>
-      <div class='Form'>
-      <div class="form-group">
-        {!! Form::open(['route' => 'admin.services.store', 'method' => 'POST']) !!}
+  <div class="col-lg-12">
+    <div class="panel panel-info">
+      <h1> Alta de servicio </h2><br><br>
+        <div class='Form'>
+          <d iv class="form-group">
+        {!! Form::open(['route' => 'admin.services.store', 'method' => 'POST','files' => true]) !!}
   <div class="form-group">
   {!! Form::label('lastModify_by', 'Creado por') !!}
   {!! Form::text('lastModify_by','Waskalle',['class' => 'form-control', 'readonly' => 'readonly', 'required','hide']) !!}
@@ -45,6 +35,10 @@
     {!! Form::label('descripcion', '* Descripción del producto') !!}
     {!! Form::textarea('descripcion',null,['class' => 'form-control', 'resize' => 'none','placeholder' => 'Descripción detallada del servicio', 'required']) !!}
   </div>
+  <div class="form-group">
+    {!! Form::label('image','Imagen') !!}
+    {!! Form::file('image') !!}
+  </div>
 
 
   <div class="form-group">
@@ -56,8 +50,4 @@
       </div>
 </div>
 </div>
-@endsection
-@section('js')
-
-
 @endsection

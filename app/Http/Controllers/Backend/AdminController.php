@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Contacto;
+use App\Productos;
+use App\Service;
+use Illuminate\Pagination\Paginator;
 
 class AdminController extends Controller {
 
@@ -17,28 +21,47 @@ class AdminController extends Controller {
 	public function index()
 	{
 		//
-		return view('Backend.home');
+		#$res = Contacto::count();
+		$res 	= Productos::count();
+		$res2 = Service::count();
+		$res3 = Contacto::count();
+		return view('Backend.home',['productos' 	=> $res
+																,'servicios' 	=> $res2
+																,'mensajes' 	=> $res3]);
 	}
-
 	/**
-	 * Show the form for creating a new resource.
+	 * Show the form for see a the messages.
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function message()
+	{
+		$mensajes = Contacto::paginate(3);
+		return view('Backend.messages.index',['mensajes' => $mensajes]);
+	}
+	/**
+	 * Show the form for answer a message.
+	 *
+	 * @return Response
+	 */
+	public function messageAnswer($id)
 	{
 		//
+		$mensajes = Contacto::find($id);
+		return view('Backend.message.messageAnswer',['mensaje' => $mensajes]);
+
 	}
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @return Response
+	 * @return Responses
 	 */
-	public function store()
-	{
-		//
-	}
+	 public function readMore($id)
+ 	{
+ 		$mensaje = Contacto::find($id);
+ 		return view('Backend.messages.readMore',['mensaje' => $mensaje]);
+ 	}
 
 	/**
 	 * Display the specified resource.
