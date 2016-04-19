@@ -20,7 +20,7 @@
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
     <link href="{{asset('css/freelancer.css')}}" rel="stylesheet">
 

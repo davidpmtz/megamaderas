@@ -1,12 +1,12 @@
 @extends('app')
 
-@section('tittle') <h1> Contáctanos </h1> @endsection
+@section('tittle') <h1 class="tittle"> Contáctanos </h1> @endsection
 
 @section('content')
 <hr>
 <div class="footer-col col-md-4">
   <center> <img src="{{asset('img/portfolio/about_us.png')}}"> </center>
-  <h3>Acerca de </h3>
+  <h3 class='tittle'>Acerca de </h3>
   <p>Somos una empresa que se preocupa por sus clientes para mantener la satisfacción de estos
   lo más alta posible y así cumplir con sus expectativas
 </p>
@@ -15,7 +15,7 @@
 
 <div class="footer-col col-md-4">
   <center> <img src="{{asset('img/portfolio/team.png')}}"> </center>
-  <h3>¿En que puedo ayudarte?</h3>
+  <h3 class='tittle'>¿En que puedo ayudarte?</h3>
   <p>Todo el equipo de MegaMaderas esta aqui para ayudarte a resolver cualquiera de tus dudas que tengas en
     relación a nosotros, nuestros productos, nuestros servicios. </p>
 </div>
@@ -24,7 +24,7 @@
 
 <div class="footer-col col-md-4">
   <center> <img src={{asset('img/portfolio/goals.png')}}> </center>
-  <h3>Objetivo</h3>
+  <h3 class='tittle'>Objetivo</h3>
   <p>MegaMaderas tiene como objetivo ser la mejor empresa proveedora de maderas para todos los clientes del país.</p>
 </div>
 
@@ -32,7 +32,7 @@
 </div>
 
   <div class='col-lg-12'>
-    <h3>Déjanos un mensaje con tus datos y nosotros te contactaremos a la brevedad.</h3>
+    <h3 class='tittle'>Déjanos un mensaje con tus datos y nosotros te contactaremos a la brevedad.</h3>
     <p>Los tiempos de respuesta varían en relación a la demanda.</p>
   </div>
 
@@ -44,7 +44,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Contact Me</h2>
+                <h2 class='tittle'>Contáctanos</h2>
                 <hr class="star-primary">
             </div>
         </div>

@@ -244,14 +244,13 @@ body {
 }
 
 div#carrusel {
-    height: 400px;
+    height: 50%;
     background-color: #673800;
 }
 
 .content-img-carrousel ul li img {
     width: 90%;
-    height: 350px;
-    padding-left: 10%;
+    height: 100%;
 }
 
 #inBuscarProducto,#btnBuscarProducto {
@@ -273,4 +272,25 @@ div#carrusel {
 .foter-socios {
     width: 20%;
 }
+<<<<<<< HEAD
 >>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
+=======
+
+.carrousel-txt {
+    color: red;
+    font-size: 50px;
+    float: left;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    width: inherit;
+}
+
+.content-img-carrousel ul {
+    list-style-type: none;
+}
+
+.content-img-carrousel img {
+    margin: 0;
+}
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966

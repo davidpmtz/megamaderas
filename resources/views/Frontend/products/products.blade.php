@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('tittle') <h1> Productos </h1> @endsection
+@section('tittle') <h1 class="tittle"> Productos </h1> @endsection
 
 @section('content')
 <nav id="navProduct" class="navbar navbar-default navbar-fixed-top">

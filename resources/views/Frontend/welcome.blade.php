@@ -1,34 +1,46 @@
 @extends('app')
 
-@section('tittle') <h1> Bienvenido </h1> @endsection
+@section('tittle')
+<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <div id="carrusel">
+        <div class="content-img-carrousel">
+            <ul>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/Servicio.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 1
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0217.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 2
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0200.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 3
+                    </div>
+                </li>
+                <li>
+                    <img src="{{asset('FotosMM/Servicios/IMG_0203.jpg')}}"/>
+                    <div class="carrousel-txt">
+                        Prueba de texto 4
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+@endsection
 
 @section('content')
-
-    <div id="carrusel" class="container">
-        <div class="row">
-            <div class="content-img-carrousel">
-                <ul>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/Servicio.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0217.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0200.jpg')}}"/>
-                    </li>
-                    <li>
-                        <img src="{{asset('FotosMM/Servicios/IMG_0203.jpg')}}"/>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Productos nuevos</h2>
+                <h2 class='tittle'>Productos nuevos</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -57,7 +69,7 @@
                                 <div class="row">
                                     <div class="col-lg-8 col-lg-offset-2">
                                         <div class="modal-body">
-                                            <h2>{{$producto->nombre}}</h2>
+                                            <h2 class='tittle'>{{$producto->nombre}}</h2>
                                             <hr class="star-primary">
                                             <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive img-centered" alt="{{$producto->nombre}}" title="{{$producto->nombre}}">
                                             <ul class="list-inline item-details">
@@ -81,7 +93,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Productos destacados</h2>
+                <h2 class='tittle'>Productos destacados</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -110,7 +122,7 @@
                                 <div class="row">
                                     <div class="col-lg-8 col-lg-offset-2">
                                         <div class="modal-body">
-                                            <h2>{{$producto->nombre}}</h2>
+                                            <h2 class='tittle'>{{$producto->nombre}}</h2>
                                             <hr class="star-primary">
                                             <img src="{{asset('images/productos')}}/{{$producto->id}}.jpg" class="img-responsive img-centered" alt="{{$producto->nombre}}" title="{{$producto->nombre}}">
                                             <ul class="list-inline item-details">
@@ -134,37 +146,37 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Nuestros socios</h2>
+                <h2 class='tittle'>Nuestras marcas</h2>
                 <hr class="star-primary">
             </div>
         </div>
         <div class="row">
             <div class="footer-col col-md-4 foter-socios">
-                <h3>Socio uno</h3>
+                <img src="{{asset('images/Marcas/cerrajes.png')}}" class="img-responsive img-centered" alt="Cerrajes" title="Cerrajes">
                 <ul class="list-inline">
 
                 </ul>
             </div>
             <div class="footer-col col-md-4 foter-socios">
-                <h3>Socio uno</h3>
+                <img src="{{asset('images/Marcas/dekken.png')}}" class="img-responsive img-centered" alt="Dekken" title="Dekken">
                 <ul class="list-inline">
 
                 </ul>
             </div>
             <div class="footer-col col-md-4 foter-socios">
-                <h3>Socio uno</h3>
+                <img src="{{asset('images/Marcas/sayer.png')}}" class="img-responsive img-centered" alt="Sayer" title="Sayer">
                 <ul class="list-inline">
 
                 </ul>
             </div>
             <div class="footer-col col-md-4 foter-socios">
-                <h3>Socio uno</h3>
+                <img src="{{asset('images/Marcas/masisa.jpg')}}" class="img-responsive img-centered" alt="Masisa" title="Masisa">
                 <ul class="list-inline">
 
                 </ul>
             </div>
             <div class="footer-col col-md-4 foter-socios">
-                <h3>Socio uno</h3>
+                <img src="{{asset('images/Marcas/logo.png')}}" class="img-responsive img-centered" alt="Megamaderas" title="Megamaderas">
                 <ul class="list-inline">
 
                 </ul>
