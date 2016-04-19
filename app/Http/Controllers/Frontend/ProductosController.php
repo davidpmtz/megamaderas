@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Productos;
 use App\Tipos;
+use App\Service;
 use Laracasts\Flash\Flash;
 use Response;
 
@@ -49,7 +50,11 @@ class ProductosController extends Controller {
 			$productos = Productos::query()
 			->select('productos.*','T.tipo')
 			->join('tipos AS T','productos.tipo_id','=','T.id')
+<<<<<<< HEAD
 			->paginate(6);
+=======
+			->paginate(9);
+>>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
 			return view('Frontend.products.products',['productos' => $productos],['tipos' => $tipos]);
 		}
 	}
@@ -59,7 +64,7 @@ class ProductosController extends Controller {
 								->select('productos.*','T.tipo')
 								->join('tipos AS T','productos.tipo_id','=','T.id')
 								->where('productos.tipo_id',$tipo)
-								->paginate(6);
+								->paginate(9);
 		$tipos = Tipos::query()
 								->select('tipo','id')
 								#->where('id',$tipo)
@@ -83,68 +88,10 @@ class ProductosController extends Controller {
 		//return Response::json(['productos' => $productos,'busqueda' => $request->input('busqueda')]);
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+	public function listOptions() {
+		$tipos = Tipos::select('tipo','id')->whereNull('deleted_at')->get();
+		$servicios = Service::select('nombre','id')->whereNull('deleted_at')->get();
+		return Response::json(['status' => 'ok','tipos' => $tipos,'servicios' => $servicios]);
 	}
 
 }

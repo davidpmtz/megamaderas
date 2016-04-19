@@ -19,6 +19,8 @@
 
     <!-- Morris Charts CSS -->
     <link href="{{asset('Backend/css/plugins/morris.css')}}" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Custom Fonts -->
     <link href="{{asset('Backend/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -51,7 +53,7 @@
             </div>
             <!-- Top Menu Items -
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
+              <!--  <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
@@ -60,7 +62,7 @@
                                     <span class="pull-left">
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
-                                    <div class="media-body">
+                                  <!--  <div class="media-body">
                                         <h5 class="media-heading"><strong>Miguel Caro</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
@@ -75,7 +77,7 @@
                                     <span class="pull-left">
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
-                                    <div class="media-body">
+                                  <!--  <div class="media-body">
                                         <h5 class="media-heading"><strong>Miguel Caro</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
@@ -130,8 +132,8 @@
                             <a href="#">View All</a>
                         </li>
                     </ul>
-                </li>
-                <li class="dropdown">
+                </li> -->
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Miguel Caro <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -148,24 +150,31 @@
                             <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="{{url('/admin')}}"><i class="fa fa-fw fa-dashboard"></i> Home</a>
+                        <a href="{{url('/admin')}}"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="{{url('admin/products')}}"><i class="fa fa-fw fa-bar-chart-o"></i> Productos</a>
+                        <a href="{{url('admin/products')}}"><i class="fa fa-tree"></i> Productos</a>
                     </li>
                     <li>
-                        <a href="{{url('admin/services')}}"><i class="fa fa-fw fa-table"></i> Servicios</a>
+                        <a href="{{url('admin/types')}}"><i class="fa fa-cubes"></i> Tipos de producto</a>
                     </li>
                     <li>
-                        <a href="{{url('admin/messages')}}"><i class="fa fa-fw fa-edit"></i> Mensajes</a>
+                        <a href="{{url('admin/services')}}"><i class="fa fa-truck"></i> Servicios</a>
                     </li>
+<<<<<<< HEAD
                   <!--  <li>
+=======
+                    <li>
+                        <a href="{{url('admin/messages')}}"><i class="fa fa-envelope-o"></i> Mensajes</a>
+                    </li>
+                    <!-- <li>
+>>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Ventas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>

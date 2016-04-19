@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Middleware;
 use Illuminate\Contracts\Auth\Guard;
+use App\Productos;
+use App\Tipos;
 
 class WelcomeController extends Controller
 {
@@ -26,9 +28,14 @@ $this->middleware('guest');
 *
 * @return Response
 */
-public function index()
-{
-return view('Frontend.welcome');
+public function index() {
+    $productos = Productos::query()
+    ->select('productos.*','T.tipo')
+    ->join('tipos AS T','productos.tipo_id','=','T.id')
+    ->orderBy('id','DESC')
+    ->paginate(3);
+
+    return view('Frontend.welcome',['productos'=>$productos]);
 }
 
 public function store() {

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Contacto;
+use App\Productos;
+use App\Service;
 use Illuminate\Pagination\Paginator;
 
 class AdminController extends Controller {
@@ -19,8 +21,13 @@ class AdminController extends Controller {
 	public function index()
 	{
 		//
-		$res = Contacto::count();
-		return view('Backend.home',['res' => $res]);
+		#$res = Contacto::count();
+		$res 	= Productos::count();
+		$res2 = Service::count();
+		$res3 = Contacto::count();
+		return view('Backend.home',['productos' 	=> $res
+																,'servicios' 	=> $res2
+																,'mensajes' 	=> $res3]);
 	}
 	/**
 	 * Show the form for see a the messages.

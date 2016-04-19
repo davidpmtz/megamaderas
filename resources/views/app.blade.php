@@ -5,7 +5,6 @@
 <!-- =          										               = -->
 <!-- =============================================== -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +26,7 @@
 
     <!-- Custom Fonts -->
     <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300italic' rel='stylesheet' type='text/css'>
     <link href="{{asset('css/principal.css')}}" rel="stylesheet">
 		@yield('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -65,11 +63,15 @@
                     <li class="page-scroll">
                         <a href="{{url('/')}}">Inicio</a>
                     </li>
-                    <li class="page-scroll">
+                    <li id="liProductos" class="page-scroll">
                         <a href="{{url('Productos')}}">Productos</a>
+                        <ul id="ulProductos" class="listOptions">
+                        </ul>
                     </li>
-                    <li class="page-scroll">
+                    <li id="liServicios" class="page-scroll">
                         <a href="{{url('Servicios')}}">Servicios</a>
+                        <ul id="ulServicios" class="listOptions">
+                        </ul>
                     </li>
                     <li class="page-scroll">
                         <a href="{{url('contacto')}}">Contacto</a>
@@ -84,8 +86,10 @@
                       </div>
                     </li>
                     <li class="page-scroll">
-                      <input id="ihRedirProductos"type="hidden" name="name" value="{{url('Productos')}}">
+                      <input id="ihRedirProductos" type="hidden" name="name" value="{{url('Productos')}}">
+                      <input id="ihService" type="hidden" name="name" value="{{url('showService')}}">
                       <input id="ihbtnBuscarProducto" type="hidden" name="name" value="{{url('showProduct')}}">
+                      <input id='listOptions' type="hidden" name="name" value="{{url('listOptions')}}">
                       <button id="btnBuscarProducto" type="submit" class="btn btn-default">Buscar</button>
                     </li>
                 </ul>
@@ -100,8 +104,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-
-                    <!--<img class="img-responsive" src="img/@yield('img')" alt="">-->
                     <div class="intro-text">
                         <span class="name">@yield('tittle')</span>
                         <hr class="star-light">
@@ -141,6 +143,7 @@
                             </li>
                         </ul>
                     </div>
+                    <div class='clear'></div>
                     <div class="footer-col col-md-4">
                         <h3>Megamaderas S.A de C.V</h3>
                         <p>Gracias por visitar nuestro sitio oficial. Esperamos cumplir con todas tus espectativas hacia nosotros.</p>
