@@ -1,5 +1,6 @@
 @extends('app')
 
+<<<<<<< HEAD
 @section('tittle') <br><div class="col-lg-12"><h1 class="tittle shatxt" style="font-size:8vw; margin-top:40px;"> Contáctanos </h1></div> @endsection
 
 @section('content')
@@ -9,6 +10,15 @@
 <div class="col-md-4">
   <center><i class="fa fa-users" style="font-size:150px;"></i></center>
   <h1 class="tittle">Acerca de </h1>
+=======
+@section('tittle') <h1 class="tittle"> Contáctanos </h1> @endsection
+
+@section('content')
+<hr>
+<div class="footer-col col-md-4">
+  <center> <img src="{{asset('img/portfolio/about_us.png')}}"> </center>
+  <h3 class='tittle'>Acerca de </h3>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
   <p>Somos una empresa que se preocupa por sus clientes para mantener la satisfacción de estos
   lo más alta posible y así cumplir con sus expectativas.
 </p>
@@ -16,8 +26,13 @@
 
 
 <div class="footer-col col-md-4">
+<<<<<<< HEAD
   <center><i class="fa fa-magic" style="font-size:150px;"></i></center>
   <h1 class="tittle">¿En que puedo ayudarte?</h1>
+=======
+  <center> <img src="{{asset('img/portfolio/team.png')}}"> </center>
+  <h3 class='tittle'>¿En que puedo ayudarte?</h3>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
   <p>Todo el equipo de MegaMaderas esta aqui para ayudarte a resolver cualquiera de tus dudas que tengas en
     relación a nosotros, nuestros productos, nuestros servicios. </p>
 </div>
@@ -25,8 +40,13 @@
 
 
 <div class="footer-col col-md-4">
+<<<<<<< HEAD
   <center><i class="fa fa-briefcase" style="font-size:150px;"></i></center>
   <h1 class='tittle'>Objetivo</h1>
+=======
+  <center> <img src={{asset('img/portfolio/goals.png')}}> </center>
+  <h3 class='tittle'>Objetivo</h3>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
   <p>MegaMaderas tiene como objetivo ser la mejor empresa proveedora de maderas para todos los clientes del país.</p>
 </div>
 
@@ -34,7 +54,10 @@
 </div>
 
   <div class='col-lg-12'>
+<<<<<<< HEAD
     <center><i class="fa fa-envelope" style="font-size:150px;"></i></center>
+=======
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     <h3 class='tittle'>Déjanos un mensaje con tus datos y nosotros te contactaremos a la brevedad.</h3>
     <p>Los tiempos de respuesta varían en relación a la demanda.</p>
   </div>
@@ -57,30 +80,54 @@
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                 {!! Form::open(['route' => 'contacto.store', 'method' => 'POST']) !!}
                     <div class="row control-group">
+<<<<<<< HEAD
                         <div class="col-xs-12  controls">
                               {!! Form::label('name', 'Nombre completo',['class' => 'secTit','style' => 'font-size:25px;']) !!}
                               {!! Form::text('name',null,['class' => 'form-control' ,'style' => 'font-size:20px;', 'placeholder' => 'Nombre..', 'required']) !!}
+=======
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                              {!! Form::label('name', '* Nombre completo') !!}
+                              {!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Nombre', 'required']) !!}
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                               <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
+<<<<<<< HEAD
                         <div class=" col-xs-12 controls">
                             {!! Form::label('email', 'Correo electrónico', ['class' => 'secTit','style' => 'font-size:25px;']) !!}
                             {!! Form::email('email',null,['class' => 'form-control','style' => 'font-size:20px;','placeholder' => 'Correo Electrónico..', 'required', 'id' => 'email', 'required data-validation-required-message' => 'Porfavor ingresa una cuenta de correo valida.']) !!}
+=======
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            {!! Form::label('email', '* Correo electrónico') !!}
+                            {!! Form::email('email',null,['class' => 'form-control', 'placeholder' => 'Correo Electrónico', 'required', 'id' => 'email', 'required data-validation-required-message' => 'Porfavor ingresa una cuenta de correo valida.']) !!}
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
+<<<<<<< HEAD
                         <div class="col-xs-12 controls">
                           {!! Form::label('telephone', 'Número de teléfono',['class' => 'secTit','style' => 'font-size:25px;']) !!}
                           {!! Form::text('telephone',null,['class' => 'form-control','style' => 'font-size:20px;', 'placeholder' => 'Teléfono..', 'required']) !!}
+=======
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                          {!! Form::label('telephone', '* Número de teléfono') !!}
+                          {!! Form::text('telephone',null,['class' => 'form-control', 'placeholder' => 'Teléfono', 'required']) !!}
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                           <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
+<<<<<<< HEAD
                         <div class="col-xs-12 controls">
                             {!! Form::label('message', 'Mensaje',['class' => 'secTit','style' => 'font-size:25px;']) !!}
                             {!! Form::textarea('message',null,['class' => 'form-control', 'style' => 'font-size:20px;','placeholder' => 'Escribe tu mensaje...','required']) !!}
+=======
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            {!! Form::label('message', '* Mensaje') !!}
+                            {!! Form::textarea('message',null,['class' => 'form-control', 'placeholder' => 'Escribe tu mensaje...','required']) !!}
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

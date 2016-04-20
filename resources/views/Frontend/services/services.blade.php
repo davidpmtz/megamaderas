@@ -1,5 +1,6 @@
 @extends('app')
 
+<<<<<<< HEAD
 @section('tittle') <br><div class="col-lg-12"><h1 class="tittle shatxt" style="font-size:8vw; margin-top:40px;"> Servicios </h1></div> @endsection
 
 @section('content')
@@ -12,6 +13,26 @@
       </a>
       <h1>{{$servicio->nombre}}</h1>
       <p>{{$servicio->descripcion}}</p>
+=======
+@section('tittle') <h1 class="tittle"> Servicios </h1> @endsection
+
+@section('content')
+  <div id="divServicios">
+    @if($servicios->count() > 0)
+    @foreach ($servicios as $servicio)
+    <div class="col-sm-4 servicio-item">
+      <a href="#producto{{$servicio->id}}" class="portfolio-link servicio-img" data-toggle="modal">
+          <img src="{{asset('images/servicios')}}/{{$servicio->id}}.jpg" class="img-responsive" alt="{{$servicio->nombre}}">
+      </a>
+      <div class="info-service">
+        <div class="title-service">
+          <h1>{{$servicio->nombre}}</h1>
+        </div>
+        <div class="desc-service">
+            {{$servicio->descripcion}}
+        </div>
+      </div>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
       <div class="not-show" aria-hidden="true">
         {{$servicio->nombre}}
         {{$servicio->descripcion}}
@@ -55,7 +76,11 @@
     <div class="divContentPagination">
     <ul class="pagination">
       @for ($i = 1; $i <= $servicios->lastPage(); $i++)
+<<<<<<< HEAD
         <li><button href="{{$servicios->url($i)}}" class="btn btn-lg btn-warning">{{$i}}</button></li>
+=======
+        <li><a href="{{$servicios->url($i)}}">{{$i}}</a></li>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
       @endfor
     </ul>
     </div>

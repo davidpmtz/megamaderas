@@ -1,7 +1,11 @@
 /*Barra de navegacion*/
 
 .navbar-default {
+<<<<<<< HEAD
   background-color: #2B6C2A;;
+=======
+  background-color: #795548;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
   border-color: transparent;
 }
 .btn-success {
@@ -102,8 +106,13 @@ footer .footer-col {
 }
 
 .navbar {
+<<<<<<< HEAD
   text-transform: capitalize;
   background-color:#1e824c;
+=======
+  font-weight: 500;
+  text-transform: capitalize;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 .nav>li>a {
@@ -142,7 +151,11 @@ footer .footer-col {
  */
 
   header {
+<<<<<<< HEAD
     background-image: url('../img/patterns/purty_wood.png');
+=======
+    background: #844801;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
   }
 /**
  * Nosotros
@@ -238,16 +251,25 @@ body {
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
+<<<<<<< HEAD
     background-color: #1e824c;
+=======
+    background-color: #654235;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 div#carrusel {
     height: 50%;
+<<<<<<< HEAD
     background-color: #1e824c;
+=======
+    background-color: #673800;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 .content-img-carrousel ul li img {
     width: 90%;
+<<<<<<< HEAD
     height: inherit;
     padding-top:0px;
     padding-top: 0px;
@@ -256,17 +278,32 @@ div#carrusel {
 #inBuscarProducto,#btnBuscarProducto {
     border: 1px solid #1e824c;
     border-radius: 2px;
+=======
+    height: 100%;
+}
+
+#inBuscarProducto,#btnBuscarProducto {
+    border: 1px solid #795548;
+    border-radius: 0px;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 .listOptions {
     display: none;
     position: fixed;
+<<<<<<< HEAD
     border-radius: 3px;
+=======
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 .listOptions > li {
     padding: 5px 7px;
+<<<<<<< HEAD
     background-color: #fff;
+=======
+    background-color: #795548;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     cursor: pointer;
 }
 
@@ -275,7 +312,11 @@ div#carrusel {
 }
 
 .carrousel-txt {
+<<<<<<< HEAD
     color: #fff;
+=======
+    color: red;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     font-size: 50px;
     float: left;
     position: absolute;
@@ -289,6 +330,7 @@ div#carrusel {
 }
 
 .content-img-carrousel img {
+<<<<<<< HEAD
     margin: 20;
 }
 /** Draven stylish**/
@@ -332,4 +374,7 @@ div#carrusel {
 }
 .smtxt{
   background-color: #fff;
+=======
+    margin: 0;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }

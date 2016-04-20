@@ -36,8 +36,12 @@ h6 {
     font-weight: 700;
 }
 .tittle {
+<<<<<<< HEAD
   font-family: woodyDudy;
   color: #2c3e50;
+=======
+  font-family: 'Kaushan Script', cursive;
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 }
 
 hr.star-light,

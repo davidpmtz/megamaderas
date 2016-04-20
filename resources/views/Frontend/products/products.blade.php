@@ -1,12 +1,21 @@
 @extends('app')
 
+<<<<<<< HEAD
 @section('tittle') <br><div class="col-lg-12"><h1 class="tittle shatxt" style="font-size:8vw; margin-top:40px;">Productos</h1></div> @endsection
+=======
+@section('tittle') <h1 class="tittle"> Productos </h1> @endsection
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
 
 @section('content')
 <nav id="navProduct" class="navbar navbar-default navbar-fixed-top">
     <div id="divProductosContainer" class="container">
+<<<<<<< HEAD
         <div class="navbar-header page-scroll" style="background-color:#fff;">
             <button type="button" class="navbar-toggle" style="background-color:#F9BF3B;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1p">
+=======
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1p">
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -19,12 +28,20 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll types-productos">
+<<<<<<< HEAD
                   <a href="{{url('Productos')}}" class="secTit" style="color:#fff; font-size:25px;"><i class="fa fa-leaf"></i>&nbsp;Todos</a>
                 </li>
                 @foreach ($tipos as $tipo)
                 <li class="page-scroll types-productos">
                   <hr>
                   <a href="{{url('Productos')}}/{{$tipo->id}}" class="secTit" style="color:#fff;">&nbsp;&nbsp;&nbsp;<i class="fa fa-leaf"></i>&nbsp;{{$tipo->tipo}}</a>
+=======
+                  <a href="{{url('Productos')}}">Todos</a>
+                </li>
+                @foreach ($tipos as $tipo)
+                <li class="page-scroll types-productos">
+                  <a href="{{url('Productos')}}/{{$tipo->id}}">{{$tipo->tipo}}</a>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                 </li>
                 @endforeach
             </ul>
@@ -32,7 +49,11 @@
     </div>
 </nav>
 
+<<<<<<< HEAD
   <div id="divProductos" class="shabx">
+=======
+  <div id="divProductos">
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     @if($productos->count() > 0)
     @foreach ($productos as $producto)
     <div class="col-sm-4 portfolio-item portfolio-producto" id="divproducto{{$producto->id}}">
@@ -76,14 +97,22 @@
     <div class="divContentPagination">
     <ul class="pagination">
       @for ($i = 1; $i <= $productos->lastPage(); $i++)
+<<<<<<< HEAD
         <li><button href="{{$productos->url($i)}}" class="btn  btn-lg btn-warning">{{$i}}</button></li>
+=======
+        <li><a href="{{$productos->url($i)}}">{{$i}}</a></li>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
       @endfor
     </ul>
     </div>
     @else
       <div class="alert alert-info alert-dismissable" style="margin-left:8%;margin-top:10%;">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
+<<<<<<< HEAD
          No hay productos registrados aún.
+=======
+        No hay productos registrados aún.
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
       </div>
     @endif
   </div>

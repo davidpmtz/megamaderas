@@ -19,12 +19,21 @@
     <title>Megamaderas S.A de C.V</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+=======
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     <!-- Custom CSS -->
     <link href="{{asset('css/freelancer.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<<<<<<< HEAD
+=======
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300italic' rel='stylesheet' type='text/css'>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
     <link href="{{asset('css/principal.css')}}" rel="stylesheet">
 
 		@yield('css')
@@ -66,6 +75,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
+<<<<<<< HEAD
                         <a href="{{url('/')}}" style="color:#fff;">Inicio</a>
                     </li>
                     <li id="liProductos" class="page-scroll">
@@ -80,16 +90,45 @@
                     </li>
                     <li class="page-scroll">
                         <a href="{{url('contacto')}}" style="color:#fff;">Contacto</a>
+=======
+                        <a href="{{url('/')}}">Inicio</a>
+                    </li>
+                    <li id="liProductos" class="page-scroll">
+                        <a href="{{url('Productos')}}">Productos</a>
+                        <ul id="ulProductos" class="listOptions">
+                        </ul>
+                    </li>
+                    <li id="liServicios" class="page-scroll">
+                        <a href="{{url('Servicios')}}">Servicios</a>
+                        <ul id="ulServicios" class="listOptions">
+                        </ul>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                     </li>
                     <li class="page-scroll">
                         <a href="{{url('acerca')}}" style="color:#fff;">Acerca de</a>
                         <!--<a href="#acerca">Acerca de</a>-->
                     </li>
                     <li class="page-scroll">
+<<<<<<< HEAD
+=======
+                        <a href="{{url('acerca')}}">Acerca de</a>
+                        <!--<a href="#acerca">Acerca de</a>-->
+                    </li>
+                    <li class="page-scroll">
+                      <div class="form-group">
+                        <input id="inBuscarProducto" type="text" data-toggle="tooltip" data-placement="bottom" title="Presiona Enter para más resultados" class="form-control" placeholder="Buscar">
+                      </div>
+                    </li>
+                    <li class="page-scroll">
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                       <input id="ihRedirProductos" type="hidden" name="name" value="{{url('Productos')}}">
                       <input id="ihService" type="hidden" name="name" value="{{url('showService')}}">
                       <input id="ihbtnBuscarProducto" type="hidden" name="name" value="{{url('showProduct')}}">
                       <input id='listOptions' type="hidden" name="name" value="{{url('listOptions')}}">
+<<<<<<< HEAD
+=======
+                      <button id="btnBuscarProducto" type="submit" class="btn btn-default">Buscar</button>
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                     </li>
                 </ul>
             </div>
@@ -105,6 +144,10 @@
                 <div class="col-lg-12">
                     <div class="intro-text">
                         <span class="name">@yield('tittle')</span>
+<<<<<<< HEAD
+=======
+                        <hr class="star-light">
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
                         <span class="skills">@yield('msg')</span>
                     </div>
                 </div>

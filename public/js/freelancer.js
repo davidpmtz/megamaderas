@@ -140,19 +140,28 @@ function addMenuOptions() {
         productos = data.tipos;
         servicios = data.servicios;
         $.each(productos,function(index, el) {
+<<<<<<< HEAD
             $li = $("<li/>");
             $icon = $("<i class='fa fa-leaf' style='color:green;'></i>&nbsp;&nbsp;");
             $a = $('<a/>',{href:$("#ihRedirProductos").val()+'/'+el.id,text:el.tipo});
             $li.append($icon);
+=======
+            $li = $('<li/>');
+            $a = $('<a/>',{href:$("#ihRedirProductos").val()+'/'+el.id,text:el.tipo});
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
             $li.append($a);
             $('#ulProductos').append($li);
         });
 
         $.each(servicios,function(index, el) {
             $li = $('<li/>');
+<<<<<<< HEAD
             $icon = $("<i class='fa fa-cog' style='color:green;'></i>&nbsp;&nbsp;");
             $a = $('<a/>',{href:$("#ihService").val()+'/'+el.id,text:el.nombre});
             $li.append($icon);
+=======
+            $a = $('<a/>',{href:$("#ihService").val()+'/'+el.id,text:el.nombre});
+>>>>>>> 4c86ee512087cb3dda4f5083a04b5095b7fef966
             $li.append($a);
             $('#ulServicios').append($li);
         });
