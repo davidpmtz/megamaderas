@@ -23,6 +23,7 @@ Route::group(array('prefix' => '/','namespace'=>'Frontend'), function()
 	Route::resource('contacto','MessageController');
 	Route::resource('Productos','ProductosController@productos');
 	Route::resource('Servicios','ServiciosController@index');
+	Route::resource('acerca','AcercaController@index');
 
 });
 
