@@ -51,7 +51,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">Megamaderas | cPanel</a>
             </div>
-            <!-- Top Menu Items -->
+            <!-- Top Menu Items -
             <ul class="nav navbar-right top-nav">
               <!--  <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
@@ -167,10 +167,14 @@
                     <li>
                         <a href="{{url('admin/services')}}"><i class="fa fa-truck"></i> Servicios</a>
                     </li>
+<<<<<<< HEAD
+                  <!--  <li>
+=======
                     <li>
                         <a href="{{url('admin/messages')}}"><i class="fa fa-envelope-o"></i> Mensajes</a>
                     </li>
                     <!-- <li>
+>>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Ventas <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>

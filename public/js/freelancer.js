@@ -172,7 +172,11 @@ function addMenuOptions() {
 }
 
 function findProduct() {
+<<<<<<< HEAD
+  var productos = $(".portfolio-producto");
+=======
   var productos = $("#divProductos > .portfolio-producto");
+>>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
   var busqueda = $("#inBuscarProducto").val();
   busqueda = busqueda.toLowerCase();
   $.each(productos,function(i, el) {
@@ -190,7 +194,11 @@ function findProduct() {
 }
 
 function showProduct() {
+<<<<<<< HEAD
+  var productos = $(".portfolio-producto");
+=======
   var productos = $("#divProductos > .portfolio-producto");
+>>>>>>> 9b31b4393c46ad95938ee13d6512821765d5ee93
   var busqueda = $("#inBuscarProducto").val();
   $.each(productos,function(i, el) {
     var contenido = productos.eq(i).text().toLowerCase();

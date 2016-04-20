@@ -1,0 +1,11 @@
+Comandos linux
+
+service apache2 start
+
+service apache2 stop
+
+service apache2 restart
+
+service apache2 status
+
+sudo gedit ruta archivo

@@ -48,7 +48,7 @@ class AdminController extends Controller {
 	{
 		//
 		$mensajes = Contacto::find($id);
-		return view('Backend.message.messageAnswer',['mensaje' => $mensajes]);
+		return view('Backend.messages.messageAnswer',['mensaje' => $mensajes]);
 
 	}
 
@@ -64,15 +64,11 @@ class AdminController extends Controller {
  	}
 
 	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+	*	name: sendAnswer
+	* parameters: Request of form on the answer
+	* return: view
+	*
+	**/
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -80,31 +76,10 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function sendAnswer(Request $request)
 	{
-		//
+		return view ('emails.contacto',['datos' => $request]);
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 }
